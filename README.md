@@ -18,6 +18,7 @@ The overall deployment failed because too many individual instances failed deplo
 EC2 script on creation to install the CodeDeploy Agent:
 
 ```
+############ aws ec2-instance
 #!/bin/bash
 sudo yum -y update
 sudo amazon-linux-extras install epel -y
@@ -31,6 +32,16 @@ wget https://aws-codedeploy-us-east-1.s3.amazonaws.com/latest/install
 sudo chmod +x ./install
 sudo ./install auto
 ```
+######### aws ubuntu server
+#!/bin/bash
+sudo apt-get update
+sudo apt-get install ruby
+sudo apt-get install wget
+cd /home/ubuntu
+wget https://aws-codedeploy-ca-central-1.s3.ca-central-1.amazonaws.com/latest/install
+chmod +x ./install
+sudo ./install auto
+sudo npm install express
 
 Check if CodeDeploy agent is running:
 ```
